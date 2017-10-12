@@ -17,6 +17,7 @@ class App extends Controller
             if ($home = get_option('page_for_posts', true)) {
                 return get_the_title($home);
             }
+
             return __('Latest Posts', 'sage');
         }
         if (is_archive()) {
@@ -28,6 +29,17 @@ class App extends Controller
         if (is_404()) {
             return __('Not Found', 'sage');
         }
+
         return get_the_title();
+    }
+
+    public function navControl()
+    {
+        $nav_args = [
+            'theme_location' => 'primary_navigation',
+            'menu_class'     => 'navbar-nav ml-auto'
+        ];
+
+        return $nav_args;
     }
 }
