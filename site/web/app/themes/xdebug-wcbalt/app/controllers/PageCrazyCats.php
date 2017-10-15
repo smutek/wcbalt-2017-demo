@@ -21,8 +21,8 @@ class PageCrazyCats extends Controller
         $i          = 0;
 
         if (have_rows('cat_group')):
+            $cat_group = [];
             while (have_rows('cat_group')): the_row();
-                $cat_group = [];
 
                 $cat_group['title']  = get_sub_field('group_title');
                 $cat_group['id']     = get_sub_field('group_id');
@@ -30,8 +30,8 @@ class PageCrazyCats extends Controller
 
                 $i === 0 ? $cat_group['state'] = 'active' : $cat_group['state'] = 'hidden';
                 $i++;
+            $cat_groups[] = $cat_group;
 
-                $cat_groups[] = $cat_group;
             endwhile;
         endif;
 

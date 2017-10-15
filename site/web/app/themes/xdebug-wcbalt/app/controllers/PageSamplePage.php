@@ -13,7 +13,7 @@ class PageSamplePage extends Controller
         $items = [
             'Apple',
             'Orange',
-            'Hamburgers'
+            'Hamburger'
         ];
 
         $foo['items'] = $items;
@@ -21,6 +21,8 @@ class PageSamplePage extends Controller
         if (in_array('Hamburger', $items)) {
             $foo = $this->bar();
         }
+
+        //var_dump($foo);
 
         return $foo;
     }
