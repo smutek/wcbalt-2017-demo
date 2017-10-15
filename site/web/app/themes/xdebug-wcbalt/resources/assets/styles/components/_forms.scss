@@ -18,6 +18,19 @@
 }
 
 .gform_wrapper {
+
+  padding: 50px;
+  background: whitesmoke;
+
+  form {
+    max-width: 480px;
+  }
+
+  .gform_body {
+    background: #fff;
+    padding: 15px;
+  }
+
   .gform_fields {
     @extend .list-unstyled;
     @extend .form-row;
@@ -49,15 +62,12 @@
     @extend .btn-primary;
   }
 
-  .ginput_complex {
-    margin-left: -15px;
-    margin-right: -15px;
-
-    @extend .form-row;
+  .gform_footer {
+    margin-top: 25px;
   }
+}
 
-  .name_first,
-  .name_last {
-    @extend .col-md-6;
-  }
+.gform_confirmation_message {
+  @extend .alert;
+  @extend .alert-success;
 }
