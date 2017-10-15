@@ -4,9 +4,16 @@ namespace App;
 
 use Sober\Controller\Controller;
 
+/**
+ * Class PageCrazyCats
+ * @package App
+ */
 class PageCrazyCats extends Controller
 {
 
+    /**
+     * @return array
+     */
     function catGroups()
     {
 
@@ -25,7 +32,6 @@ class PageCrazyCats extends Controller
                 $i++;
 
                 $cat_groups[] = $cat_group;
-
             endwhile;
         endif;
 
