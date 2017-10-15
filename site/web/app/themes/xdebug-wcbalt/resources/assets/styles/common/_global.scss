@@ -2,3 +2,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.cat-header {
+  margin: 25px 0 15px;
+}
+
+.cats {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .cat {
+    margin: 15px 0;
+  }
+}

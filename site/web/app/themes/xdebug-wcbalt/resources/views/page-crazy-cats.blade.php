@@ -1,18 +1,25 @@
 @extends('layouts.app')
-@php(xdebug_break())
+
 @section('content')
   @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @php(the_content())
 
-    @if($foo)
-      <h2>{{ $foo['title'] }}</h2>
-      <ul>
-        @foreach($foo['items'] as $item)
-          <li>{{ $item }}</li>
-        @endforeach
-      </ul>
-    @endif
+  @include('partials.page-header')
+
+  @php(the_content())
+
+  @if($cat_groups)
+    <ul class="nav nav-tabs" id="cat_tabs" role="tablist">
+      @foreach($cat_groups as $cat_group)
+        @include('partials.cat-tabs')
+      @endforeach
+    </ul>
+
+    <div class="tab-content">
+      @foreach($cat_groups as $cat_group)
+        @include('partials.cat-panes')
+      @endforeach
+    </div>
+  @endif
 
   @endwhile
 @endsection
